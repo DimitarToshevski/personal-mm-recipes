@@ -1,0 +1,5 @@
+<ActionBar [title]="title">
+  <ActionItem *ngIf="canLogout" (tap)="onLogout()"
+    ><Button text="Logout" class="btn btn-primary btn-rounded-lg"></Button>
+  </ActionItem>
+</ActionBar>

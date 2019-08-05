@@ -1,7 +1,10 @@
 {
   "name": "ns-ng-recipes",
   "nativescript": {
-    "id": "org.nativescript.nsngrecipes"
+    "id": "org.nativescript.nsngrecipes",
+    "tns-android": {
+      "version": "5.3.1"
+    }
   },
   "version": "0.0.0",
   "scripts": {

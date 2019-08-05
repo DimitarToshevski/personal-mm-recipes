@@ -1,0 +1,29 @@
+<app-action-bar title="My Recipes"></app-action-bar>
+<StackLayout verticalAlignment="center" horizontalAlignment="center">
+  <ListView
+    *ngIf="recipes.length; else noRecipes"
+    height="100%"
+    [items]="recipes"
+    class="list-group"
+  >
+    <ng-template let-item="item">
+      <StackLayout padding="20">
+        <Label
+          [text]="item.title"
+          width="100%"
+          class="h1 text-center font-weight-bold"
+        ></Label>
+        <Label
+          [text]="item.description"
+          width="100%"
+          class="text-center"
+        ></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  <ng-template #noRecipes>
+    <StackLayout>
+      <Label text="You have no recipes yet." textWrap="true"></Label>
+    </StackLayout>
+  </ng-template>
+</StackLayout>

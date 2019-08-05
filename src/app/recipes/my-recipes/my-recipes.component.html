@@ -1,0 +1,19 @@
+<app-action-bar title="My Recipes" [canLogout]="true">
+  <a routerLink="add-recipe">Add recipe</a>
+</app-action-bar>
+<div class="container">
+  <h1>My Recipes</h1>
+  <ng-container *ngIf="recipes.length; else noRecipes">
+    <div class="border-bottom pb-5" *ngFor="let recipe of recipes">
+      <h3 class="mb-0">{{ recipe.title }}</h3>
+      <p class="mt-0 mb-0">
+        {{ recipe.description }}
+      </p>
+    </div>
+  </ng-container>
+  <ng-template #noRecipes>
+    <h3>You have no recipes yet.</h3>
+  </ng-template>
+
+  <button class="mt-20" routerLink="add-recipe">Add recipe</button>
+</div>

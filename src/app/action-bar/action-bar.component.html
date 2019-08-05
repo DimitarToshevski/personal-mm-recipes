@@ -1,0 +1,7 @@
+<header class="action-bar">
+  <h1>{{ title }}</h1>
+  <nav>
+    <ng-content></ng-content>
+  </nav>
+  <button *ngIf="canLogout" (click)="onLogout()">Logout</button>
+</header>

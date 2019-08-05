@@ -1,0 +1,28 @@
+<app-action-bar title="Login" [canLogout]="false"></app-action-bar>
+<div class="container">
+  <h1>Login to My Recipes App</h1>
+  <form class="column" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      [(ngModel)]="email"
+      name="email"
+      id="email"
+      #emailIn
+      required
+    />
+    <label for="password" class="mt-20">Password</label>
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      id="password"
+      #passwordIn
+      autocomplete="new-password"
+      required
+    />
+    <button class="mt-20" type="submit" [disabled]="!loginForm.valid">
+      Login
+    </button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<app-action-bar title="Add Recipe" [canLogout]="true">
+  <a routerLink="/recipes">My recipes</a>
+</app-action-bar>
+<div class="container">
+  <form [formGroup]="addRecipeForm" class="column" (ngSubmit)="onSubmit()">
+    <label for="title" class="mt-20">Title</label>
+    <input type="text" id="title" formControlName="title" />
+    <label for="description" class="mt-20">Description</label>
+    <textarea
+      type="text"
+      id="description"
+      formControlName="description"
+    ></textarea>
+    <button type="submit" class="mt-20">Add recipe</button>
+  </form>
+</div>

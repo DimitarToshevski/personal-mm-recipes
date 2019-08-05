@@ -1,0 +1,28 @@
+<app-action-bar title="Add Recipe"></app-action-bar>
+<StackLayout
+  verticalAlignment="center"
+  horizontalAlignment="center"
+  [formGroup]="addRecipeForm"
+>
+  <Label
+    *ngIf="showSuccessNotification"
+    class="h2 text-success"
+    text="Successfully added recipe"
+  ></Label>
+  <Label text="Add new recipe" textWrap="true" class="h1"></Label>
+
+  <Label text="Title" textWrap="true"></Label>
+  <TextField hint="Enter recipe's title" formControlName="title"></TextField>
+
+  <Label text="Description" textWrap="true"></Label>
+  <TextField
+    hint="Enter recipe's description"
+    formControlName="description"
+  ></TextField>
+  <Button
+    text="Add recipe"
+    class="btn btn-primary btn-rounded-lg"
+    [isEnabled]="addRecipeForm.valid"
+    (tap)="onSubmit()"
+  ></Button>
+</StackLayout>
